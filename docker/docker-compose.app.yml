@@ -1,0 +1,29 @@
+name: project_hiddenartist
+services:
+  nginx:
+    container_name: ha_app_nginx
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    networks:
+      - ha-network
+
+  springboot:
+    container_name: ha_app_springboot
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    env_file:
+      - ../env/springboot-docker.env
+    environment:
+      - SPRING_PROFILES_ACTIVE=develop
+    networks:
+      - ha-network
+
+networks:
+  ha-network:
+    external: true

@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="h-full bg-white" lang="ko" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		      name="viewport">
+		<meta content="ie=edge" http-equiv="X-UA-Compatible">
+		<title th:text="${title}">Title</title>
+		<link rel="stylesheet" th:href="@{/css/tailwind-out.css}">
+	</head>
+	<body class="h-full">
+		<div class="min-h-screen flex flex-col">
+			<header class="w-full">
+				<section id="header"
+				         sec:authorize="hasRole('ROLE_ADMIN')"
+				         th:replace="~{/fragments/header :: header}">
+				</section>
+			</header>
+			<main class="flex-grow">
+				<section id="content" th:replace="~{${viewName} :: content}"></section>
+			</main>
+			<footer class="w-full">
+				<section id="footer"
+				         sec:authorize="hasRole('ROLE_ADMIN')"
+				         th:replace="~{/fragments/footer :: footer}">
+				</section>
+			</footer>
+		</div>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</body>
+</html>

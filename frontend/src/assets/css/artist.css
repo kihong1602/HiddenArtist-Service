@@ -1,0 +1,124 @@
+.img_art {
+    max-width: 356px; 
+    max-height: 356px;
+    display: inline-flex;
+    background-color: #faffff;
+    justify-content: space-around;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+.img_main {
+    max-width: 356px; 
+    max-height: 356px;
+    display: inline-flex;
+    background-color: #faffff;
+    justify-content: space-around;
+    margin-right: 24px;
+    margin-bottom: 46px;
+}
+
+.img_sub {
+    max-width: 261px; 
+    max-height: 261px;
+    display: inline-flex;
+    background-color: #faffff;
+    justify-content: space-around;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+#profile {
+    width: 261px;
+    height: 261px;
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-right: 64px;
+}
+
+#profile img {
+    border-radius: 261px;
+    background: lightgray 50% / cover no-repeat;
+}
+
+#artistInfo { 
+    vertical-align: top;
+    width: 785px;
+}
+
+#artistInfo td:nth-child(odd) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    vertical-align: top;
+
+    display: table-cell;
+
+}
+
+
+
+#artistInfo td:nth-child(even) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.48px;
+
+    display: table-cell;
+
+    padding-left: 32px;
+}
+
+#descTitle {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    vertical-align: top;
+
+    margin-bottom: 16px;
+
+}
+
+#follow {
+    display: inline-flex;
+    padding: 8px 29px 9px 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #C41000;
+    background: none;
+    color: #C41000;
+}
+
+#preview3D {
+    display: inline-flex;
+    padding: 8px 26px 9px 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #FAFFFF;
+    background: none;
+    color: #FAFFFF;
+}
+
+#moreBtn {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.72px;
+}
+

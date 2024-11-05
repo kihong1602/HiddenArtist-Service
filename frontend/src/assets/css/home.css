@@ -1,0 +1,62 @@
+body {
+  background-color: #161719 !important;
+}
+
+.img_art {
+  max-width: 356px; 
+  max-height: 356px;
+  display: inline-flex;
+  background-color: #faffff;
+  justify-content: space-around;
+  margin-right: 24px;
+}
+
+.img_exh {
+  max-width: 261px; 
+  max-height: 175px;
+  display: inline-flex;
+  background-color: #faffff;
+  justify-content: space-around;
+  margin-right: 24px;
+}
+
+.img_art img {
+  object-fit: contain;
+  width: 356px;
+}
+
+.img_exh img {
+  object-fit: contain;
+  width: 261px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+  color: #FAFFFF;
+  margin-bottom: 24px;
+  font-family: "Noto Serif KR";
+}
+
+h2 a, h2 a:visited {
+  font-weight: 500;
+  font-size: 24px;
+  color: #FAFFFF;
+  margin-bottom: 24px;
+  text-decoration: none;
+  font-family: "Noto Serif KR";
+}
+
+#banner {
+  width: 100%;
+  height: 550px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+#banner img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}

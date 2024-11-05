@@ -1,0 +1,78 @@
+h2 { 
+    color: #FAFFFF;
+    font-family: "Noto Serif KR";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.72px;
+}
+
+.exhTitle {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+.exhPeriod {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.42px;
+}
+
+/* 마감된 전시회 이미지 투명도 */
+.exh_2 > .img_exh {
+    opacity: 70%;
+}
+
+#exhInfo {
+    
+    vertical-align: top;
+}
+
+#exhInfo td:nth-child(odd) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+
+    display: table-cell;
+
+}
+
+#exhInfo td:nth-child(even) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.48px;
+
+    display: table-cell;
+
+    padding-left: 32px;
+}
+
+#preview3D {
+    display: inline-flex;
+    padding: 8px 26px 9px 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #FAFFFF;
+    background: none;
+    color: #FAFFFF;
+}
+

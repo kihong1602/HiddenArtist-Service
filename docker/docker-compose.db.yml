@@ -1,0 +1,38 @@
+name: project_hiddenartist
+services:
+  mysql:
+    container_name: ha_mysql
+    image: mysql:8.0.34
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root1234'
+      MYSQL_DATABASE: 'pop'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user1234'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_volume:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - ha-network
+
+  redis:
+    container_name: ha_redis
+    image: redis:latest
+    environment:
+      - REDIS_PASSWORD=1234
+    command: redis-server --requirepass 1234
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_volume:/data
+    networks:
+      - ha-network
+
+volumes:
+  mysql_volume:
+  redis_volume:
+
+networks:
+  ha-network:
+    external: true

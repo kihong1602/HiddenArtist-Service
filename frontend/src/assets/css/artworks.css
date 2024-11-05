@@ -1,0 +1,69 @@
+.img_art {
+    max-width: 356px; 
+    max-height: 356px;
+    display: inline-flex;
+    background-color: #faffff;
+    justify-content: space-around;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+#artworkImg {
+    width: 546px;
+    height: 546px;
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-right: 27px;
+}
+
+#artworkImg img {
+    background: lightgray 50% / cover no-repeat;
+}
+
+#artworksInfo { 
+    vertical-align: top;
+    width: 550px;
+}
+
+#artworksInfo td:nth-child(odd) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    vertical-align: top;
+
+    display: table-cell;
+
+    width: 50px;
+
+}
+
+#artworksInfo td:nth-child(even) {
+    color: #FAFFFF;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.48px;
+
+    display: table-cell;
+
+    padding-left: 32px;
+}
+
+#profile2 {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-right: 64px;
+}
+
+#profile2 img {
+    border-radius: 150px;
+    background: lightgray 50% / cover no-repeat;
+}

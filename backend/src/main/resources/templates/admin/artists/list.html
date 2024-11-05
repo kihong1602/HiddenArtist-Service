@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<title>Document</title>
+	</head>
+	<body>
+		<section th:fragment="content">
+			<div class="overflow-x-auto">
+				<table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+					<thead class="ltr:text-left rtl:text-right">
+					<tr>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Image</th>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Name</th>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Token</th>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Create Date</th>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Update Date</th>
+						<th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Delete Date</th>
+						<th class="px-4 py-2"></th>
+					</tr>
+					</thead>
+
+					<tbody class="divide-y divide-gray-200" th:each="artist : ${artists.content}">
+					<tr>
+						<td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+							<img alt="Artist Image" th:src="${artist.image}"/>
+						</td>
+						<td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center" th:text="${artist.name}">Artist Name</td>
+						<td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center" th:text="${artist.token}">Artist Token
+						</td>
+						<td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center"
+						    th:text="${#temporals.format(artist.createDate,'yyyy.MM.dd HH:mm')}">Artist Create Date
+						</td>
+						<td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center"
+						    th:text="${#temporals.format(artist.updateDate,'yyyy.MM.dd HH:mm')}">Artist Update Date
+						</td>
+						<td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center"
+						    th:text="${artist.deleteDate == null ? 'no': #temporals.format(artist.deleteDate,'yyyy.MM.dd HH:mm')}">
+							Artist Delete Date
+						</td>
+						<td class="whitespace-nowrap px-4 py-2">
+							<a
+									class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+									href="#"
+							>
+								View
+							</a>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<ol class="flex justify-center gap-1 text-xs font-medium">
+				<!-- Previous Page -->
+				<li>
+					<a
+							class="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
+							th:href="@{/admin/artists(page=${artists.metadata.number - 1})}"
+							th:if="${artists.metadata.number > 0}"
+					>
+						<span class="sr-only">Prev Page</span>
+						<svg
+								class="size-3"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+									clip-rule="evenodd"
+									d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+									fill-rule="evenodd"
+							/>
+						</svg>
+					</a>
+				</li>
+
+				<!-- Page Numbers -->
+				<li th:each="pageNum : ${#numbers.sequence(
+      (artists.metadata.number >= 3 ? artists.metadata.number - 2 : 1),
+      (artists.metadata.number >= 3 ? (artists.metadata.number + 2 > artists.metadata.totalPages ? artists.metadata.totalPages : artists.metadata.number + 2) : (artists.metadata.totalPages >= 5 ? 5 : artists.metadata.totalPages))
+    )}">
+					<a
+							class="block size-8 rounded border text-center leading-8"
+							th:classappend="${artists.metadata.number + 1 == pageNum} ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-100 bg-white text-gray-900'"
+							th:href="@{/admin/artists(page=${pageNum})}"
+							th:text="${pageNum}"
+					></a>
+				</li>
+
+				<!-- Next Page -->
+				<li>
+					<a
+							class="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
+							th:href="@{/admin/artists(page=${artists.metadata.number + 1})}"
+							th:if="${artists.metadata.number + 1 < artists.metadata.totalPages}"
+					>
+						<span class="sr-only">Next Page</span>
+						<svg
+								class="size-3"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+									clip-rule="evenodd"
+									d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+									fill-rule="evenodd"
+							/>
+						</svg>
+					</a>
+				</li>
+			</ol>
+		</section>
+	</body>
+</html>

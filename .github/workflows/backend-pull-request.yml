@@ -1,0 +1,14 @@
+name: POP Backend Pull Request Workflow
+
+on:
+  pull_request:
+    branches: [ 'main','develop' ]
+    paths:
+      - 'backend/**'
+      - '.github/**'
+
+jobs:
+  backend-build:
+    uses: ./.github/workflows/backend-build.yml
+    permissions:
+      contents: read

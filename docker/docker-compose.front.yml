@@ -1,0 +1,27 @@
+name: Project_HiddenArtist
+services:
+  nginx:
+    container_name: ha_front_nginx
+    image: nginx:alpine
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - ha-network
+
+  springboot:
+    container_name: ha_front_springboot
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    env_file:
+      - ../env/springboot-docker.env
+    networks:
+      - ha-network
+
+networks:
+  ha-network:
+    external: true

@@ -1,0 +1,81 @@
+.img_mentor {
+    max-width: 261px; 
+    max-height: 307px;
+    display: inline-flex;
+    background-color: #faffff;
+    justify-content: space-around;
+    margin-right: 24px;
+}
+
+.mainTitle {
+    color: #FAFFFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+.subTitle {
+    color: #FAFFFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.42px;
+}
+
+.dDay {
+    color: #FF796D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+.star {
+    color: #FFC700;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.42px;
+}
+
+div a, div a:visited {
+    text-decoration: none;
+}
+
+#sort {
+    display: flex;
+    width: 106px;
+    height: 37px;
+    padding: 7px 20px 7px 19px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #FAFFFF;
+    background: none;
+    color: #FAFFFF;
+
+    -webkit-appearance: none;  /* 크롬 화살표 없애기 */
+    -moz-appearance: none; /* 파이어폭스 화살표 없애기 */
+    appearance: none;  /* 화살표 없애기 */
+
+    background: url('/image/down-chevron.svg') no-repeat 82.5% 50%;
+
+    color: #FAFFFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+#sort option {
+    background: #161719;
+    color: white;
+    border: 1px solid #FAFFFF;
+}
